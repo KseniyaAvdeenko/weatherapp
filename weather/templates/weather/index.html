@@ -28,7 +28,14 @@
             </div>
             <div class="col-4 offset-1">
                 <h1>Информация</h1>
-                <div class="alert alert-danger">Погода в Минске</div>
+                <div class="alert alert-danger">
+                    <b>Город: </b>{{ info.city }}<br>
+                    <b>Температура: </b>{{ info.temp }}<sup>0</sup><br>
+                    <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды" class="img-thundnail"><br>
+                    <b>Ветер: </b>{{ info.wind }} <b>м/с</b><br>
+                    <b>Давление: </b>{{ info.pressure }} <b>мм рт. ст.</b><br>
+                    <b>Влажность: </b>{{ info.humidity }} <b>%</b><br> 
+                </div>
             </div>
         </div><!--row-->
     </div><!--container-->   
