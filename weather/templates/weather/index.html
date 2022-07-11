@@ -20,38 +20,42 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-5 offset-1">
-                <form action="">
+                <form action="" method="post">
+                    {% csrf_token %}
                     <label for="city">Город</label>
-                    <input type="text" id="city" class="form-control" placeholder="Введите город">
+                    {{ form.name}}
+                    <!-- <input type="text" id="city" class="form-control" placeholder="Введите город"> -->
                     <input type="submit" value="Узнать" class="mt-2 btn btn-danger">
                 </form>
             </div>
             <div class="col-4 offset-1">
                 <h1>Информация</h1>
-                <div class="alert alert-info">
-                    <div class="row">
-                        <div class="col-9">
-                            <b>Город: </b>{{ info.city }}<br>
-                        </div><!--col-9-->
-                        <div class="col-4">
-                            <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды"> 
-                        </div><!--col-4-->
-                        <div class="col-4">
-                            <h2>{{ info.temp }}<sup>o</sup></h2> 
-                        </div><!--col-4-->
-                    </div><!--row-->
-                    <div class="row align-items-end">
-                        <div class="col">
-                            <b>Ветер: </b><br>{{ info.wind }} м/с
-                        </div>
-                        <div class="col">
-                            <b>Давление: </b><br>{{ info.pressure }} мм рт. ст.
-                        </div>
-                        <div class="col">
-                            <b>Влажность: </b><br>{{ info.humidity }} %<br>
-                        </div>
-                    </div><!--row align-items-end-->
-                </div><!-- alert alert-info-->                
+                {% for info in all_info %}
+                    <div class="alert alert-info">
+                        <div class="row">
+                            <div class="col-9">
+                                <b>Город: </b>{{ info.city }}<br>
+                            </div><!--col-9-->
+                            <div class="col-4">
+                                <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды"> 
+                            </div><!--col-4-->
+                            <div class="col-4">
+                                <h2>{{ info.temp }}<sup>o</sup></h2> 
+                            </div><!--col-4-->
+                        </div><!--row-->
+                        <div class="row align-items-end">
+                            <div class="col">
+                                <b>Ветер: </b><br>{{ info.wind }} м/с
+                            </div>
+                            <div class="col">
+                                <b>Давление: </b><br>{{ info.pressure }} мм рт. ст.
+                            </div>
+                            <div class="col">
+                                <b>Влажность: </b><br>{{ info.humidity }} %<br>
+                            </div>
+                        </div><!--row align-items-end-->
+                    </div><!-- alert alert-info-->    
+                {% endfor %}               
             </div>
         </div><!--row-->
     </div><!--container-->   
