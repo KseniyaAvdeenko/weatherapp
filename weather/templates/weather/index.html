@@ -28,14 +28,30 @@
             </div>
             <div class="col-4 offset-1">
                 <h1>Информация</h1>
-                <div class="alert alert-danger">
-                    <b>Город: </b>{{ info.city }}<br>
-                    <b>Температура: </b>{{ info.temp }}<sup>0</sup><br>
-                    <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды" class="img-thundnail"><br>
-                    <b>Ветер: </b>{{ info.wind }} <b>м/с</b><br>
-                    <b>Давление: </b>{{ info.pressure }} <b>мм рт. ст.</b><br>
-                    <b>Влажность: </b>{{ info.humidity }} <b>%</b><br> 
-                </div>
+                <div class="alert alert-info">
+                    <div class="row">
+                        <div class="col-9">
+                            <b>Город: </b>{{ info.city }}<br>
+                        </div><!--col-9-->
+                        <div class="col-4">
+                            <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды"> 
+                        </div><!--col-4-->
+                        <div class="col-4">
+                            <h2>{{ info.temp }}<sup>o</sup></h2> 
+                        </div><!--col-4-->
+                    </div><!--row-->
+                    <div class="row align-items-end">
+                        <div class="col">
+                            <b>Ветер: </b><br>{{ info.wind }} м/с
+                        </div>
+                        <div class="col">
+                            <b>Давление: </b><br>{{ info.pressure }} мм рт. ст.
+                        </div>
+                        <div class="col">
+                            <b>Влажность: </b><br>{{ info.humidity }} %<br>
+                        </div>
+                    </div><!--row align-items-end-->
+                </div><!-- alert alert-info-->                
             </div>
         </div><!--row-->
     </div><!--container-->   
