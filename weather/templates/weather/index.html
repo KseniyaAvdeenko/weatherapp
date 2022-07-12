@@ -27,14 +27,20 @@
                     <input type="submit" value="Узнать" class="mt-2 btn btn-danger">
                 </form>
             </div>
+            
             <div class="col-4 offset-1">
                 <h1>Информация</h1>
                 {% for info in all_info %}
                     <div class="alert alert-info">
-                        <div class="row">
+                        <div class="row"> 
                             <div class="col-9">
                                 <b>Город: </b>{{ info.city }}<br>
                             </div><!--col-9-->
+                            <div class="col-1">
+                                <a href="{% url 'delete' info.city %}">
+                                    <button type="submit">X</button>
+                                </a>
+                            </div>
                             <div class="col-4">
                                 <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды"> 
                             </div><!--col-4-->
@@ -53,6 +59,7 @@
                                 <b>Влажность: </b><br>{{ info.humidity }} %<br>
                             </div>
                         </div><!--row align-items-end-->
+                        
                     </div><!-- alert alert-info-->    
                 {% endfor %}               
             </div>
