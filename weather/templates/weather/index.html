@@ -27,7 +27,6 @@
                     <input type="submit" value="Узнать" class="mt-2 btn btn-danger">
                 </form>
             </div>
-            
             <div class="col-4 offset-1">
                 <h1>Информация</h1>
                 {% for info in all_info %}
@@ -36,9 +35,12 @@
                             <div class="col-9">
                                 <b>Город: </b>{{ info.city }}<br>
                             </div><!--col-9-->
-                            <div class="col-1">
+                            <div class="col-auto">
                                 <a href="{% url 'delete' info.city %}">
-                                    <button type="submit">X</button>
+                                    <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                                        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                                      </svg></button>
                                 </a>
                             </div>
                             <div class="col-4">
@@ -58,12 +60,14 @@
                             <div class="col">
                                 <b>Влажность: </b><br>{{ info.humidity }} %<br>
                             </div>
-                        </div><!--row align-items-end-->
+                        </div><!--row align-items-end -->
                         
-                    </div><!-- alert alert-info-->    
+                    </div><!-- alert alert-info-->     
                 {% endfor %}               
             </div>
         </div><!--row-->
     </div><!--container-->   
 </body>
 </html>
+
+
